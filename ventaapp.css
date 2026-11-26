@@ -1,0 +1,30 @@
+/* //Codex_add: Estilos de la demostración de VentaApp */
+.ventaapp{display:grid;grid-template-columns:minmax(0, .85fr) minmax(0, 1.15fr);align-items:center;gap:clamp(22px,5vw,64px);background:#edf5fb;border-radius:20px;box-sizing:border-box;max-width:1080px}
+.va-intro h2{border:0;padding:0;margin:8px 0;font-size:clamp(2rem,4vw,3.4rem);line-height:1.05;letter-spacing:-.04em;color:#102d49}
+.va-intro p{line-height:1.6}
+.va-intro a{color:#004080;font-weight:700}
+.va-kicker{font-weight:800;color:#24516e;font-size:.76rem;letter-spacing:.12em}
+.va-screen{background:white;border-radius:18px;overflow:hidden;box-shadow:0 12px 34px #102d4924;color:#202938}
+.va-head,.va-nav,.va-item,.va-fields{display:flex;align-items:center;gap:10px}
+.va-head{background:#102d49;color:white;justify-content:space-between;padding:16px 18px}
+.va-head span{font-size:.75rem;color:#e2edf8}
+.va-nav{padding:10px;border-bottom:1px solid #dde6ed;gap:4px}
+.va-screen button,.va-screen input,.va-screen select{font:inherit;box-sizing:border-box;border:1px solid #ccd7e2;border-radius:8px;padding:8px;background:white;color:inherit;min-height:40px}
+.va-screen button{cursor:pointer;font-weight:650}
+.va-screen button:disabled{cursor:default;opacity:.5}
+.va-nav button{flex:1;border-color:transparent;padding-inline:4px;font-size:.83rem}
+.va-nav button[aria-pressed=true],.va-screen .va-primary{background:#004080;color:white}
+.va-screen :focus-visible{outline:3px solid #bd6100;outline-offset:2px}
+.va-content{padding:14px;min-height:290px}
+.va-content label{display:block;font-weight:650;font-size:.87rem;min-width:0}
+.va-content input,.va-content select{display:block;width:100%;margin:5px 0 9px}
+.va-fields{align-items:start}
+.va-fields label{flex:1}
+.va-item{justify-content:space-between;border-bottom:1px solid #dde6ed;padding:9px 0;font-size:.87rem}
+.va-item small{display:block;color:#45586b;margin-top:4px}
+.va-item input{width:64px;margin:0}
+.va-price{white-space:nowrap}
+.va-status{margin:0;padding:0 14px 14px;color:#174f38;font-size:.88rem}
+.va-status:empty{display:none}
+.va-timeline{line-height:2;padding-left:22px}
+@media(max-width:760px){.ventaapp{grid-template-columns:1fr;padding:24px 14px;margin-inline:12px}.va-content{min-height:0}}

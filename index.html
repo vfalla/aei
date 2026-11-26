@@ -18,6 +18,9 @@
     th, td { border:1px solid #ccc; padding:10px; text-align:left; }
     th { background:#e6f0ff; }
   </style>
+  <!-- //Codex_add: Recursos de la demo -->
+  <link rel="stylesheet" href="ventaapp.css">
+  <script src="ventaapp.js" defer></script>
 </head>
 <body>
 
@@ -40,9 +43,49 @@
   <div class="grid">
     <div class="card"><strong>EDocSAEFEL GT / SV / CR / PA</strong><br>Certificación FEL regional.</div>
     <div class="card"><strong>VentaApp Windows</strong><br>Sistema de ventas para vendedores de ruta.</div>
-    <div class="card"><strong>VentaApp Android</strong><br>Aplicación móvil para pedidos y ventas.</div>
+    <!-- //Codex_add: Acceso a la demo de VentaApp -->
+    <div class="card"><strong>VentaApp Android</strong><br>Aplicación móvil para pedidos y ventas. <a href="#ventaapp">Prueba la demo</a>.</div>
     <div class="card"><strong>InstaAB</strong><br>Cotizador e instalador de accesorios.</div>
     <div class="card"><strong>APIs, ERP, CRM</strong><br>Integraciones empresariales completas.</div>
+  </div>
+</section>
+
+<!-- //Codex_add: Demo interactiva de VentaApp -->
+<section id="ventaapp" class="ventaapp">
+  <div class="va-intro">
+    <p class="va-kicker">VENTAAPP MÓVIL · ANDROID</p>
+    <h2>De la visita al pedido</h2>
+    <p>Consulta existencias en ruta, toma pedidos listos para facturar en Aspel SAE y revisa el estado de entrega desde el teléfono.</p>
+    <a href="mailto:aeigtinfo@gmail.com?subject=Demostraci%C3%B3n%20de%20VentaApp">Solicita una demostración de VentaApp</a>
+  </div>
+  <div class="va-screen">
+    <div class="va-head"><strong>VentaApp</strong><span>Demo · Datos ficticios</span></div>
+    <nav class="va-nav" aria-label="Módulos de la demo">
+      <button type="button" data-panel="catalogo" aria-pressed="true">Productos</button>
+      <button type="button" data-panel="pedido" aria-pressed="false">Pedido (<span id="va-count">0</span>)</button>
+      <button type="button" data-panel="seguimiento" aria-pressed="false">Seguimiento</button>
+    </nav>
+    <div class="va-content" id="va-catalogo">
+      <label>Buscar por código o nombre <input id="va-search" type="search" placeholder="Ej. Llave"></label>
+      <div id="va-products"></div>
+    </div>
+    <div class="va-content" id="va-pedido" hidden>
+      <form id="va-order">
+        <div class="va-fields">
+          <label>Cliente <select id="va-client"><option>Ferretería Roble</option><option>Taller Horizonte</option></select></label>
+          <label>Condición de pago <select id="va-payment"><option>Contado</option><option>Crédito</option></select></label>
+        </div>
+        <div id="va-lines"></div>
+        <p><strong>Total <output id="va-total">Q 0.00</output></strong></p>
+        <button type="submit" class="va-primary" id="va-save" disabled>Grabar pedido de prueba</button>
+      </form>
+    </div>
+    <div class="va-content" id="va-seguimiento" hidden>
+      <label>Factura <select id="va-invoice"><option value="transit">F-DEMO-102 · Ferretería Roble</option><option value="delivered">F-DEMO-087 · Taller Horizonte</option></select></label>
+      <p id="va-tracking"></p>
+      <ol class="va-timeline"><li>Empacado</li><li>En tránsito</li><li id="va-delivery">Entrega pendiente</li></ol>
+    </div>
+    <p id="va-status" class="va-status" role="status" aria-atomic="true"></p>
   </div>
 </section>
 
